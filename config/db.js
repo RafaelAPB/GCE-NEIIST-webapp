@@ -1,10 +1,9 @@
+require('dotenv').load();
 const DB_PROD = process.env.DB_PRODUCTION;
 let DB_DEV = process.env.DB_DEV;
 const secret = process.env.DB_SECRET;
 
-if (!process.env.DB_DEVELOPMENT)    {
-    DB_DEV = 'mongodb://<dbuser>:<dbpassword>@ds263571.mlab.com:63571/gce_base';
-}   else {
+if (process.env.DB_DEVELOPMENT)    {
     DB_DEV = process.env.DB_DEVELOPMENT;
 }
 
